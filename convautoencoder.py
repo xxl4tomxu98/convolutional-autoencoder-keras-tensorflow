@@ -20,7 +20,6 @@ class ConvAutoencoder:
 		# channels dimension itself
 		inputShape = (height, width, depth)
 		chanDim = -1
-
         # define the input to the encoder
 		inputs = Input(shape=inputShape)
 		x = inputs
@@ -36,7 +35,6 @@ class ConvAutoencoder:
 		latent = Dense(latentDim)(x)
 		# build the encoder model
 		encoder = Model(inputs, latent, name="encoder")
-
         # start building the decoder model which will accept the
 		# output of the encoder as its inputs
 		latentInputs = Input(shape=(latentDim,))
